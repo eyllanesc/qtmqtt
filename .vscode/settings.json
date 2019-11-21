@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "/home/eyllanesc/.local/share/virtualenvs/qtmqtt-U19Qx8Ja/bin/python",
+    "python.linting.pylintArgs": [
+        "--generate-members"
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[dev-packages]
+bumpversion = "*"
+wheel = "*"
+watchdog = "*"
+flake8 = "*"
+flake8-isort = "*"
+flake8-lineleak = "*"
+flake8-annotations = "*"
+flake8-bandit = "*"
+flake8-commas = "*"
+flake8-deprecated = "*"
+tox = "*"
+coverage = "*"
+pytest = "*"
+pytest-xvfb = "*"
+pytest-qt = "*"
+pytest-runner = "*"
+pytest-print = "*"
+Sphinx = "*"
+twine = "*"
+black = "*"
+
+[packages]
+qtmqtt = {path = ".",editable = true}
+paho_mqtt = "*"
+qtpy = "*"
+pyqt5 = "*"
+pyside2 = "*"
+
+[pipenv]
+allow_prereleases = true
