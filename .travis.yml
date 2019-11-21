@@ -1,5 +1,3 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 dist: xenial
 addons:
@@ -9,26 +7,20 @@ addons:
     - libxkbcommon-x11-0
 services: xvfb
 python:
-  - "3.7"
-  - "3.6"
+- '3.7'
+- '3.6'
 env:
   matrix:
-    - QT_API=PyQt5   PYTEST_QT_API=PyQt5
-    - QT_API=PySide2 PYTEST_QT_API=PySide2
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+  - QT_API=PyQt5   PYTEST_QT_API=PyQt5
+  - QT_API=PySide2 PYTEST_QT_API=PySide2
 install: pip install -U tox-travis
-# Command to run tests, e.g. python setup.py test
 script: tox
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: eyllanesc
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: T+iDrAETjaXQ/nuD957W7flh3fvKcWLfXFohnh6FR9UQ/vdcAYaWXNJivQujjeuKNb7O8KLebjfrMQCnI15/eFW7XKYhQiWE4RB2tovh7/azrHLQZW5+F5v2BPCYUe2lfuPys7LghwbepqyBGsl2+bFXIhO7rkXycT7TLusgT9nHMNF3DNuo8sit2kBY1opwjVW0EGN0gz5Jdbl7+YOCjwuGrlfjowfjzv7sZKxcjwg7KaR+dX5xBH7lV9ybZj5JTXOvdGSEifGPFtUTtFHTLMwj84liaCCkbJ5+Weg3fSAwOpiHGHcrPtycisKBKLTj8bV2oxd1Bg1C5xGVq12XqM8mFn+CUKAISU41OsW7n96e0kuF8mHjYdoTPWnhu0ywq2vC7m+zzDgbqOo1csC53jJGy5tjvYIDvUPFCSHwFaGtznxgynpZMUg/Kpd4og+qdEecgsE55wUfTyVj+WiNNAaqqFOhJaY7BIDnkZpa7fMguEp09kcJEJgiJsJNCtx8k6gcIlsRVkwMxoenawJcjvoWejThxsz1djcKnj9jLUcxUikzaSLmmNNBoF3Xl4184tAxnCimCjyaF8d7eVu7iZ9CW/XdugkKzsMI3OIp8v0TfeTP2nwTlynR6cQo6coJ8t2Im/R5EUz6/GIDqQ5tddWUO2X3ibn53Vg6kcGaWo4=
   on:
     tags: true
     repo: eyllanesc/qtmqtt
