@@ -6,7 +6,7 @@ import os
 import sys
 
 import pytest
-from qtpy import QtCore, QtNetwork, QtTest
+from qtpy import QtCore, QtNetwork
 
 from qtmqtt import MqttClient
 
@@ -40,7 +40,9 @@ def mqtt_connection(request):
         if socket.waitForConnected(3000):
             yield "localhost"
             break
-        QtTest.QTest.qWait(5000)
+        loop = QtCore.QEventLoop()
+        QtCore.QTimer.singleShot(5000, loop.quit)
+        loop.exec_()
     print("Could not launch MQTT test broker.")
 
 
